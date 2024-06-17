@@ -1,0 +1,86 @@
+.header {
+    position: fixed; /* Фиксируем хедер на верху страницы */
+    top: 0; /* Располагаем его в самом верху */
+    left: 0;
+    right: 0;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Устанавливаем высокий уровень z-index, чтобы хедер отображался над другими элементами */
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px; /* Располагаем полоску под хедером */
+    width: 100%;
+    height: 2px; /* Высота полоски */
+    background-color: gray; /* Цвет полоски */
+    opacity: .3;
+}
+
+.header a {
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+@media screen and (max-width: 500px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header a {
+        margin-bottom: 10px;
+    }
+}
+
+.header-right {
+    position: absolute;
+    top: 0;
+    right: 200px; /* Отступ от правого края */
+    height: 100%; /* Занимает всю высоту header */
+    display: flex;
+    align-items: center;
+}
+
+
+.header a:nth-child(2) {
+    margin-left: 100px;
+}
+
+.user-table {
+    border-collapse: collapse;
+}
+.user-table td {
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    padding-left: 150px;
+}
+
+.logout-button {
+    border: 2px solid black;
+    padding: 5px 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+

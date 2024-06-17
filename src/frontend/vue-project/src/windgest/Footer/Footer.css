@@ -1,0 +1,51 @@
+.footer {
+    position: fixed; /* Фиксируем футер внизу страницы */
+    bottom: 0; /* Располагаем его в самом низу */
+    left: 0;
+    right: 0;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Устанавливаем высокий уровень z-index, чтобы футер отображался над другими элементами */
+    transform: translateX(0); /* Убираем смещение */
+}
+
+.footer::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0; /* Располагаем полоску в начале футера */
+    width: 100%;
+    height: 2px; /* Высота полоски */
+    background-color: gray; /* Цвет полоски */
+    opacity: .3;
+}
+
+.footer a {
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    margin-right: 80px;
+}
+
+
+.footer a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+@media screen and (max-width: 500px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer a {
+        margin-bottom: 10px;
+    }
+}
+
